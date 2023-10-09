@@ -7,53 +7,52 @@ import java.util.HashSet;
 public class Tasks {
 
     /*
-    * Записать в переменную 10^100 и прибавить к ней 10^100 и вывести на экран
-    * */
-    public static BigInteger addition(){
+     * Записать в переменную 10^100 и прибавить к ней 10^100 и вывести на экран
+     * */
+    public static BigInteger addition() {
         BigInteger a = new BigInteger("10").pow(100);
-        BigInteger b = new BigInteger("10").pow(100);
 
-        return a.add(b);
+        return a.add(a);
     }
 
     /*
-    * Взять остаток от деления 8 на 3 и разделить на 2
-    * */
-    public static Integer division(){
+     * Взять остаток от деления 8 на 3 и разделить на 2
+     * */
+    public static Integer division() {
         Integer a = 8;
         Integer b = 3;
 
-        return a%b / 2;
+        return a % b / 2;
     }
 
     /*
-    * Развернуть строку (abc → cba)
-    * */
-    public static String reverseString(String string){
-        if(string.isEmpty()){
-          throw new IllegalArgumentException("String argument cannot be empty.");
+     * Развернуть строку (abc → cba)
+     * */
+    public static String reverseString(String string) {
+        if (string == null || string.isEmpty()) {
+            throw new IllegalArgumentException("String argument cannot be null or empty.");
         }
 
         return new StringBuilder(string).reverse().toString();
     }
 
     /*
-    * Удалить все последовательные повторяющие символы (aabccd → abcd)
-    * */
-    public static String removeDuplicatesFromString(String string){
-        if(string.isEmpty()){
-            throw new IllegalArgumentException("String argument cannot be empty.");
+     * Удалить все последовательные повторяющие символы (aabccd → abcd)
+     * */
+    public static String removeDuplicatesFromString(String string) {
+        if (string == null || string.isEmpty()) {
+            throw new IllegalArgumentException("String argument cannot be null or empty.");
         }
 
         StringBuilder sb = new StringBuilder();
         HashSet<Character> stringSet = new HashSet<>();
         char[] charArray = string.toCharArray();
 
-        for(Character c: charArray){
+        for (Character c : charArray) {
             stringSet.add(c);
         }
 
-        for(Character c: stringSet){
+        for (Character c : stringSet) {
             sb.append(c);
         }
 
@@ -61,30 +60,36 @@ public class Tasks {
     }
 
     /*
-    * Развернуть массив ([0, 1, 2] → [2, 1, 0])
-    * */
-    public static ArrayList<Integer> reverseArray(int[] array){
-        if(array.length == 0){
-           throw new IllegalArgumentException("Array argument cannot be empty.");
+     * Развернуть массив ([0, 1, 2] → [2, 1, 0])
+     * */
+    public static Integer[] reverseArray(Integer[] array) {
+        if (array == null || array.length == 0) {
+            throw new IllegalArgumentException("Array argument cannot be null or empty.");
         }
 
-        ArrayList<Integer> reversedArray = new ArrayList<>();
+        ArrayList<Integer> reversedArrayList = new ArrayList<>();
 
-        for(int i = array.length - 1; i >= 0; i--){
-            reversedArray.add(array[i]);
+        for (int i = array.length - 1; i >= 0; i--) {
+            reversedArrayList.add(array[i]);
         }
 
-        return reversedArray;
+        Integer[] simpleArray = new Integer[reversedArrayList.size()];
+
+        return reversedArrayList.toArray(simpleArray);
     }
 
     /*
-    * Сумма значений двумерного массива
-    * */
-    public static int twoDArraySum(int[][] twoDArray){
+     * Сумма значений двумерного массива
+     * */
+    public static int twoDArraySum(int[][] twoDArray) {
+        if (twoDArray == null) {
+            throw new IllegalArgumentException("twoDArray argument cannot be null.");
+        }
+
         int sum = 0;
 
-        for(int[] array: twoDArray){
-            for(int i: array) {
+        for (int[] array : twoDArray) {
+            for (int i : array) {
                 sum += i;
             }
         }
