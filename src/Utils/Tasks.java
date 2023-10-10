@@ -10,7 +10,7 @@ public class Tasks {
      * Записать в переменную 10^100 и прибавить к ней 10^100 и вывести на экран
      * */
     public static BigInteger addition() {
-        BigInteger a = new BigInteger("10").pow(100);
+        BigInteger a = BigInteger.valueOf(10L).pow(100);
 
         return a.add(a);
     }
@@ -67,15 +67,16 @@ public class Tasks {
             throw new IllegalArgumentException("Array argument cannot be null or empty.");
         }
 
-        ArrayList<Integer> reversedArrayList = new ArrayList<>();
+        Integer[] reversedArray = new Integer[array.length];
 
-        for (int i = array.length - 1; i >= 0; i--) {
-            reversedArrayList.add(array[i]);
+        for (int j = 0; j < array.length; j++) {
+            for (int i = array.length - 1; i >= 0; i--) {
+                reversedArray[j] = array[i];
+                j++;
+            }
         }
 
-        Integer[] simpleArray = new Integer[reversedArrayList.size()];
-
-        return reversedArrayList.toArray(simpleArray);
+        return reversedArray;
     }
 
     /*
