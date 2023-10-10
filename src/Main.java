@@ -26,7 +26,7 @@ public class Main {
         }
 
         try {
-            Integer[] arr = {1, 2, 3};
+            Integer[] arr = {1, 2, 3, 4};
             Integer[] task5_res = Tasks.reverseArray(arr);
             System.out.printf("Reversed array result: %s%n", Arrays.toString(task5_res));
         } catch (Exception e) {
@@ -40,7 +40,5 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-
     }
 }

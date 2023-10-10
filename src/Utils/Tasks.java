@@ -68,11 +68,8 @@ public class Tasks {
 
         Integer[] reversedArray = new Integer[array.length];
 
-        for (int j = 0; j < array.length; j++) {
-            for (int i = array.length - 1; i >= 0; i--) {
-                reversedArray[j] = array[i];
-                j++;
-            }
+        for (int i = array.length - 1; i >= 0; i--) {
+            reversedArray[reversedArray.length - i - 1] = array[i];
         }
 
         return reversedArray;
