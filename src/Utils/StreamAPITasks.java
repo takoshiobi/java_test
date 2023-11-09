@@ -18,11 +18,11 @@ public class StreamAPITasks {
     }
 
     public static List<Integer> multiplyTen(List<Integer> intArray) {
-        return intArray.stream().sorted().map(el -> el * 10).collect(Collectors.toList());
+        return intArray.stream().map(el -> el * 10).collect(Collectors.toList());
     }
 
     public static List<Integer> oddAddTwo(List<Integer> intArray) {
-        return intArray.stream().sorted().map(el -> el % 2 == 0 ? el : el + 2).collect(Collectors.toList());
+        return intArray.stream().map(el -> el % 2 == 0 ? el : el + 2).collect(Collectors.toList());
     }
 
     public static Integer arraySum(List<Integer> intArray) {
